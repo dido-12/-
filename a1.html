@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>واجهة تقديم الانشغالات</title>
+    <style>
+        /* خلفية الصفحة */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            direction: rtl;
+            background: url('a1.PNG') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column; /* جعل التخطيط عموديًا */
+            align-items: center; /* محاذاة العناصر أفقيًا */
+        }
+
+        /* تنسيق الهيدر */
+        header {
+            background-color: rgba(0, 0, 0, 0.6); /* خلفية داكنة شفافة */
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            position: fixed; /* إبقاء الهيدر في أعلى الصفحة */
+            top: 0;
+            left: 0;
+        }
+
+        header h1, header h2, header h3, header p {
+            margin: 5px 0;
+        }
+
+        /* تنسيق الصورة القابلة للنقر */
+        .call-image {
+            width: 100px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* تنسيق الفورم */
+        .form-container {
+            background: rgba(255, 255, 255, 0.85); /* خلفية بيضاء شفافة */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            margin-top: 300px; /* إبعاد الفورم عن الهيدر */
+        }
+
+        /* تنسيق المدخلات */
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #f09041;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* تأثير عند التركيز */
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* زر الإرسال */
+        button {
+            background-color: #0ea18e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #088e78;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <h1>الجمـهورية الجزائـرية الديمقـراطية الشعـبية</h1>
+        <h2>وزارة التجارة الداخلية وضبط السوق الوطنية</h2>
+        <h3>المديرية العامة للرقابة الاقتصادية وقمع الغش</h3>
+        <p>مرحبًا، قدم انشغالك أو <br> <span>اتصل بالرقم الأخضر 1020</span></p>
+        <img src="Nvert.png" alt="اتصل بالرقم 1020" class="call-image" id="callImage">
+    </header>
+
+    <!-- الفورم -->
+    <div class="form-container">
+        <h2>نموذج تقديم الانشغال</h2>
+        <form action="https://formspree.io/f/mdkkjljq" method="POST">
+            <label for="fullName">الاسم واللقب:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="أدخل اسمك ولقبك" required>
+
+            <label for="phone">رقم الهاتف:</label>
+            <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك" required>
+
+            <label for="email">البريد الإلكتروني:</label>
+            <input type="email" id="email" name="email" placeholder="أدخل بريدك الإلكتروني" required>
+
+            <label for="description">وصف الانشغال:</label>
+            <textarea id="description" name="description" placeholder="اكتب وصفًا دقيقًا للانشغال" rows="5" required></textarea>
+
+            <button type="submit">إرسال</button>
+        </form>
+    </div>
+
+    <script>
+        // جعل الصورة قابلة للنقر للاتصال بالرقم 1020 مباشرةً
+        document.getElementById('callImage').addEventListener('click', function () {
+            window.location.href = 'tel:1020';
+        });
+    </script>
+
+</body>
+</html>
