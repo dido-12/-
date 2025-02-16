@@ -52,7 +52,7 @@
             margin-top: 240px;
         }
 
-        input, textarea, select {
+        input, textarea, select, .file-input {
             width: 90%;
             padding: 6px;
             margin-bottom: 12px;
@@ -82,6 +82,7 @@
 
         button:hover { background-color: #088e78; }
         .phone-error { color: red; font-size: 10px; display: none; }
+        .file-input { cursor: pointer; }
     </style>
 </head>
 <body>
@@ -95,7 +96,7 @@
     </header>
 
     <div class="form-container">
-        <form action="https://formsubmit.co/inshighalmcirmn@gmail.com" method="POST">
+        <form action="https://formsubmit.co/inshighalmcirmn@gmail.com" method="POST" enctype="multipart/form-data">
             <!-- إعدادات FormSubmit -->
             <input type="hidden" name="_captcha" value="true">
             <input type="hidden" name="_next" value="https://dido-12.github.io/Merci_inshighal/">
@@ -170,6 +171,15 @@
                 <option value="عين تموشنت">عين تموشنت</option>
                 <option value="غرداية">غرداية</option>
                 <option value="غليزان">غليزان</option>
+                <option value="تيميمون">تيميمون</option>
+                <option value="برج باجي مختار">برج باجي مختار</option>
+                <option value="أولاد جلال">أولاد جلال</option>
+                <option value="بني عباس">بني عباس</option>
+                <option value="إن صالح">إن صالح</option>
+                <option value="إن قزام">إن قزام</option>
+                <option value="تقرت">تقرت</option>
+                <option value="جانت">جانت</option>
+                <option value="المغير">المغير</option>
             </select>
 
             <label for="municipality">البلدية:</label>
@@ -181,6 +191,12 @@
             <label for="description">وصف الانشغال:</label>
             <textarea id="description" name="وصف الانشغال" 
                       rows="5" required></textarea>
+
+            <!-- حقل رفع الصور -->
+            <label for="imageUpload">رفع صورة (اختياري):</label>
+            <input type="file" id="imageUpload" name="صورة" 
+                   class="file-input" accept="image/*" 
+                   capture="environment">
 
             <button type="submit">إرسال الانشغال</button>
         </form>
